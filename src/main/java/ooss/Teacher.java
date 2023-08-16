@@ -19,7 +19,7 @@ public class Teacher extends Person {
                 (this.classes.size() == 1 ? this.classes.get(0).number :
                         this.classes.stream()
                                 .map(klass -> String.valueOf(klass.number))
-                                .collect(Collectors.joining(", ")) + "."));
+                                .collect(Collectors.joining(", "))) + ".");
     }
 
     public void assignTo(Klass klass) {
