@@ -23,14 +23,14 @@ public class Klass {
         return Objects.hash(number);
     }
 
-    public void assignLeader(Student king) {
-        if (king.isIn(this))
-            this.leader = king;
+    public void assignLeader(Student newLeader) {
+        if (newLeader.isIn(this))
+            this.leader = newLeader;
         else
             System.out.println("It is not one of us.");
     }
 
-    public boolean isLeader(Student tom) {
-        return this.leader.equals(tom);
+    public boolean isLeader(Student student) {
+        return this.leader.equals(student);
     }
 }

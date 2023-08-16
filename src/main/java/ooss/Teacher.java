@@ -30,7 +30,7 @@ public class Teacher extends Person {
         return this.classes.contains(klass);
     }
 
-    public boolean isTeaching(Student tom) {
-        return this.classes.stream().anyMatch(tom::isIn);
+    public boolean isTeaching(Student student) {
+        return this.classes.stream().anyMatch(student::isIn);
     }
 }
