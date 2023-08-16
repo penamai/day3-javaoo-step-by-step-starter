@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Person {
     public int id;
-    private final String name;
+    public final String name;
     private final int age;
 
     public Person(int id, String name, int age){
