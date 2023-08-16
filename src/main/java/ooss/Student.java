@@ -1,23 +1,25 @@
 package ooss;
 
-public class Student extends Person{
+public class Student extends Person {
 
     private Klass klass;
+
     public Student(int id, String name, int age) {
         super(id, name, age);
     }
 
-    public void join(Klass newClass){
+    public void join(Klass newClass) {
         this.klass = newClass;
     }
 
-    public boolean isIn(Klass className){
+    public boolean isIn(Klass className) {
         return className.equals(this.klass);
     }
 
     @Override
-    public String introduce(){
+    public String introduce() {
         return super.introduce() + " I am a student."
-                + (this.klass == null ? "" : " I am in class " + this.klass.number + ".");
+                + (this.klass == null ? "" : (this.klass.isLeader(this) ? " I am the leader of class " : " I am in class ")
+                + this.klass.number + ".");
     }
 }
