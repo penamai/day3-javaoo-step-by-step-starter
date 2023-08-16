@@ -2,7 +2,6 @@ package ooss;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class Teacher extends Person {
@@ -29,5 +28,9 @@ public class Teacher extends Person {
 
     public boolean belongsTo(Klass klass) {
         return this.classes.contains(klass);
+    }
+
+    public boolean isTeaching(Student tom) {
+        return this.classes.stream().anyMatch(tom::isIn);
     }
 }
