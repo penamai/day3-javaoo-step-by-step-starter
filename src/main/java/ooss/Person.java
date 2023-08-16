@@ -1,7 +1,9 @@
 package ooss;
 
+import java.util.Objects;
+
 public class Person {
-    private final int id;
+    public int id;
     private final String name;
     private final int age;
 
@@ -13,5 +15,18 @@ public class Person {
 
     public String introduce(){
         return "My name is " + name + ". I am " + age + " years old.";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return id == person.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
