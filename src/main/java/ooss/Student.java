@@ -18,8 +18,14 @@ public class Student extends Person {
 
     @Override
     public String introduce() {
-        return super.introduce() + " I am a student."
-                + (this.klass == null ? "" : (this.klass.isLeader(this) ? " I am the leader of class " : " I am in class ")
-                + this.klass.number + ".");
+        StringBuilder introduction = new StringBuilder();
+        introduction.append(super.introduce()).append(" I am a student.");
+        if (this.klass != null) {
+            introduction.append(this.klass.isLeader(this) ?
+                            " I am the leader of class " :
+                            " I am in class ")
+                    .append(this.klass.number).append(".");
+        }
+        return introduction.toString();
     }
 }

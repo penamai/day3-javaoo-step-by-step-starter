@@ -14,12 +14,16 @@ public class Teacher extends Person {
 
     @Override
     public String introduce() {
-        return super.introduce() + " I am a teacher."
-                + (this.classes.size() == 0 ? "" : " I teach Class " +
-                (this.classes.size() == 1 ? this.classes.get(0).number :
-                        this.classes.stream()
-                                .map(klass -> String.valueOf(klass.number))
-                                .collect(Collectors.joining(", "))) + ".");
+        StringBuilder introduction = new StringBuilder();
+        introduction.append(super.introduce()).append(" I am a teacher.");
+        if (this.classes.size() > 0) {
+            introduction.append(" I teach Class ").append(this.classes.size() == 1 ?
+                    this.classes.get(0).number :
+                    this.classes.stream()
+                            .map(klass -> String.valueOf(klass.number))
+                            .collect(Collectors.joining(", "))).append(".");
+        }
+        return introduction.toString();
     }
 
     public void assignTo(Klass klass) {
