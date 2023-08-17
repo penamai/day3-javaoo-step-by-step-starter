@@ -12,7 +12,7 @@ public class Person {
         this.name = name;
         this.age = age;
     }
-
+    //TODO Just want to share an idea, you can use String.format() for cleaner code when returning a dynamic string
     public String introduce(){
         return "My name is " + name + ". I am " + age + " years old.";
     }
