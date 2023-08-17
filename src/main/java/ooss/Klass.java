@@ -39,7 +39,10 @@ public class Klass {
     }
 
     public boolean isLeader(Student student) {
-        return this.leader.equals(student);
+        if (this.leader != null)
+            return this.leader.equals(student);
+        else
+            return false;
     }
 
     public void attach(Person person) {
